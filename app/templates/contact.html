@@ -6,41 +6,42 @@
     <hr>
     <form method="POST" action="{{ url_for('contact') }}" class = "formc">
         {{ form.csrf_token }}
-        <fieldset class="form-field">
-            {{ form.name.label }}
-            {{ form.name(class_="namefld") }}
-            {% if form.name.errors %}
-                {{form.name.errors[0]}}
-            {% endif %}
-        </fieldset>
+        <ul class="formstf">
+            <li class="form-field">
+                <label>{{ form.name.name }} <span class="required">*</span></label>
+                {{ form.name(class_="namefld") }}
+                {% if form.name.errors %}
+                    {{form.name.errors[0]}}
+                {% endif %}
+            </li>
 
-        <fieldset class="form-field">
-            {{ form.email.label }}
-            {{ form.email(class_="emailfld") }}
-            {% if form.email.errors %}
-                {{form.email.errors[0]}}
-            {% endif %}
-        </fieldset>
+            <li class="form-field">
+                <label>{{ form.email.name }} <span class="required">*</span></label>
+                {{ form.email(class_="emailfld") }}
+                {% if form.email.errors %}
+                    {{form.email.errors[0]}}
+                {% endif %}
+            </li>
 
-        <fieldset class="form-field">
-            {{ form.subject.label }}
-            {{ form.subject(class_="subfld") }}
-            {% if form.subject.errors %}
-                {{form.subject.errors[0]}}
-            {% endif %}
-        </fieldset>
+            <li class="form-field">
+                <label>{{ form.subject.name }} <span class="required">*</span></label>
+                {{ form.subject(class_="subfld") }}
+                {% if form.subject.errors %}
+                    {{form.subject.errors[0]}}
+                {% endif %}
+            </li>
 
-        <fieldset class="form-field">
-            {{ form.msg.label }}
-            {{ form.msg(class_="msgfld")}}
-            {% if form.msg.errors %}
-                {{form.msg.errors[0]}}
-            {% endif %}
-        </fieldset>
-        
+            <li class="form-field">
+                <label>{{ form.msg.name }} <span class="required">*</span></label>
+                {{ form.msg(class_="msgfld")}}
+                {% if form.msg.errors %}
+                    {{form.msg.errors[0]}}
+                {% endif %}
+            </li>
+            
 
-        <button type="submit">Go</button>
-        
+            <button type="submit">Submit</button>
+        </ul>
     </form>
   </div>
 {% endblock %}
