@@ -1,29 +1,41 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="form-wrapper">
+<div class = "container">
     <h2 class="title">Contact</h2>
-
-    <form method="POST" action="{{ url_for('contact') }}">
+    <hr>
+    <form method="POST" action="{{ url_for('contact') }}" class = "formc">
         {{ form.csrf_token }}
         <fieldset class="form-field">
             {{ form.name.label }}
-            {{ form.name(size=20) }}
+            {{ form.name(class_="namefld") }}
+            {% if form.name.errors %}
+                {{form.name.errors[0]}}
+            {% endif %}
         </fieldset>
 
         <fieldset class="form-field">
             {{ form.email.label }}
-            {{ form.email }}
+            {{ form.email(class_="emailfld") }}
+            {% if form.email.errors %}
+                {{form.email.errors[0]}}
+            {% endif %}
         </fieldset>
 
         <fieldset class="form-field">
             {{ form.subject.label }}
-            {{ form.subject }}
+            {{ form.subject(class_="subfld") }}
+            {% if form.subject.errors %}
+                {{form.subject.errors[0]}}
+            {% endif %}
         </fieldset>
 
         <fieldset class="form-field">
             {{ form.msg.label }}
-            {{ form.msg }}
+            {{ form.msg(class_="msgfld")}}
+            {% if form.msg.errors %}
+                {{form.msg.errors[0]}}
+            {% endif %}
         </fieldset>
         
 

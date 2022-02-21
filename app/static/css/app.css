@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+
 body {
     padding-top: 5rem;
+}
+
+.formc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+button{
+    background: #2f4ad0;
+    border: none;
+    color:white;
 }

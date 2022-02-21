@@ -33,6 +33,7 @@ def contact():
         msg = Message(test.subject.data,sender=(test.name.data,test.email.data),recipients=["to@example.com"])
         msg.body = test.msg.data
         mail.send(msg)
+        flash("Message successfully sent", "success")
         return redirect(url_for('home'))
     return render_template('contact.html', form=test)
 ###
